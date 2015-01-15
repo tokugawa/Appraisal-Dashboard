@@ -1,0 +1,129 @@
+<div class="page-content-wrapper">
+	<div class="page-content">
+		<!-- BEGIN PAGE HEAD -->
+		<div class="page-head">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Users <small>Home</small></h1>
+			</div>
+			<!-- END PAGE TITLE -->
+		</div>
+		<!-- END PAGE HEAD -->
+		<!-- BEGIN PAGE BREADCRUMB -->
+		<ul class="page-breadcrumb breadcrumb hide">
+			<li>
+				<a href="#">Home</a><i class="fa fa-circle"></i>
+			</li>
+			<li class="active">
+				 Users
+			</li>
+		</ul>
+		<!-- END PAGE BREADCRUMB -->
+		<!-- BEGIN PAGE CONTENT INNER -->
+		<div class="row margin-top-10">
+			<div class="col-md-12" >
+				<div class="panel panel-default">
+				  	<div class="panel-body">
+					    <table id="users-table" class="table table-hover dataTable" style="width: 100%">
+							<!-- DataTable will be filled with user data -->
+						</table>
+				  	</div>
+				  	<div class="panel-footer clearfix">
+				  		<div class="pull-right" >
+				  			<!-- <a class="btn btn-default" href="#" role="button">Compare</a> TODO-->
+			  				<a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target=".add-user-modal">Add New</a>
+			  				<div class="modal fade add-user-modal" tabindex="-1" role="dialog" aria-labelledby="add-user-label" aria-hidden="true" id="create-user-modal">
+							  	<div class="modal-dialog modal-lg">
+							   		<div class="modal-content">
+							      		<div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									        <h4 class="modal-title" id="add-user-label">Add User</h4>
+								      	</div>
+								      	<div class="modal-body">
+								        	<div id="formWrap">
+												<form name="myForm" id="reservation" onsubmit="return validateNewUser()" class="form form-horizontal">
+													<div class="control-group">
+														<!--label class="control-label">Email</label-->
+														
+														<div id="msg">
+														
+														</div>
+														<div class="controls">
+															<div class="table-responsive">
+															<table class="table" width="100%">
+															
+																							
+															<tbody><tr>
+																	<td width="15%" align="left"> <font color="green">Email</font></td>
+																	<td width="85%"><input id="email" type="email" class="form-control validateUsername"></td>
+															</tr>
+
+
+															<tr>
+																	<td width="15%" align="left"> <font color="green">Password</font></td>
+																	<td width="85%"><input id="password" type="password" class="form-control"></td>
+															</tr>
+
+
+															
+															<tr>
+																	<td width="15%" align="left"><font color="green">First Name</font></td>
+																	<td width="85%"><input id="firstName" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+
+
+															<tr>
+																	<td width="15%" align="left"><font color="green">Last Name</font></td>
+																	<td width="85%"><input id="lastName" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+																
+
+															<tr>
+																	<td width="15%" align="left"><font color="green">Address Line1</font></td>
+																	<td width="85%"><input id="addressLine1" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+						
+															<tr>
+																	<td width="15%" align="left"><font color="green">Address Line2</font></td>
+																	<td width="85%"><input id="addressLine2" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+
+															<tr>
+																	<td width="15%" align="left"><font color="green">City</font></td>
+																	<td width="85%"><input id="city" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+
+															<tr>
+																	<td width="15%" align="left"><font color="green">State</font></td>
+																	<td width="85%"><input id="state" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+															
+															<tr>
+																	<td width="15%" align="left"><font color="green">Zip code</font></td>
+																	<td width="85%"><input id="zip" type="text" style="color:#aaa" class="form-control"></td>
+															</tr>	
+
+															</tbody></table>
+															</div>
+															
+														</div>
+													</div>
+												</form>
+											</div>
+								      	</div>
+								      	<div class="modal-footer">
+								      		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								      		<a class="btn btn-default" href="#" role="button" onclick="document.getElementById('reservation').reset()" >Clear</a>
+								      		<a class="btn btn-default" href="#" role="button" onclick="if(createUser()){document.getElementById('reservation').reset()};" >Create</a>
+								      	</div>
+							    	</div>
+							  	</div>
+							</div>
+				  		</div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		<!--END PAGE CONTENT INNER -->
+	</div>
+</div>
