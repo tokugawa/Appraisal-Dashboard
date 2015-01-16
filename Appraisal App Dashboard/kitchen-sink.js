@@ -19,6 +19,7 @@ function loadOverview(){
 		Index.init(); // init index page
  		Tasks.initDashboardWidget(); // init tash dashboard widget
 
+ 		//Morris Chart about the number of orders from each customer
  		new Morris.Donut({
 		  	element: 'customer-order-distribution-chart',
 		  	data: [
@@ -57,7 +58,7 @@ function loadUsersIndividual(userId){
 
 			for(var x=0; x<orders.length; x++){
 				if(orders[x].appraiser.id==userId && orders[x].completedStatus){
-					com.push(new Completed(userId, orders[x].id, randomDate(new Date(2014, 0, 1), new Date()), Math.random() *10 ));
+					com.push(new Completed(userId, orders[x].id, randomDate(new Date(2014, 0, 1), new Date()), ((Math.random() *10 )+"").substring(0,5)));
 				}
 			}
 			return com;
@@ -126,7 +127,7 @@ function loadUsersIndividual(userId){
 				$('#user-address-one').val(users[x].addressOne);
 				$('#user-address-two').val(users[x].addressTwo);
 				$('#user-city').val(users[x].city);
-				$('#user-state').val(users[x].state);
+				$('#user-zip').val(users[x].zip);
 			}
 		}
 	});
@@ -169,6 +170,20 @@ function loadOrdersIndividual(orderId){
 		//TODO
 		$('#order-number').html(orderId);
 		
+		for(var x=0; x<orders.length; x++){
+			if(orders[x].id == orderId){
+				$('#order-assigned-appraiser').val(orders[x].appraiser.lastName);
+				$('#order-customer').val(orders[x].company);
+				$('#order-email').val(orders[x].email);
+				//$('#order-phone-number').val(orders[x].phoneNumber);
+				$('#order-address-one').val(orders[x].street);
+				//$('#order-address-one').val(orders[x].addressOne);
+				//$('#order-address-two').val(orders[x].addressTwo);
+				$('#order-city').val(orders[x].city);
+				$('#order-state').val(useordersrs[x].state);
+				$('#order-zip').val(useordersrs[x].zip);
+			}
+		}
 	});
 }
 function loadSupport(){
@@ -555,3 +570,7 @@ function createUser(){
 		return true;
 	}
 }
+function createOrder(){
+	//TODO
+}
+///////////////////////////////////////////////////////////////////////////////
