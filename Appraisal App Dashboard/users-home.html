@@ -40,76 +40,92 @@
 									        <h4 class="modal-title" id="add-user-label">Add User</h4>
 								      	</div>
 								      	<div class="modal-body">
-								        	<div id="formWrap">
-												<form name="myForm" id="reservation" onsubmit="return validateNewUser()" class="form form-horizontal">
-													<div class="control-group">
-														<!--label class="control-label">Email</label-->
-														
-														<div id="msg">
-														
-														</div>
-														<div class="controls">
-															<div class="table-responsive">
-															<table class="table" width="100%">
-															
-																							
-															<tbody><tr>
-																	<td width="15%" align="left"> <font color="green">Email</font></td>
-																	<td width="85%"><input id="email" type="email" class="form-control validateUsername"></td>
-															</tr>
-
-
-															<tr>
-																	<td width="15%" align="left"> <font color="green">Password</font></td>
-																	<td width="85%"><input id="password" type="password" class="form-control"></td>
-															</tr>
-
-
-															
-															<tr>
-																	<td width="15%" align="left"><font color="green">First Name</font></td>
-																	<td width="85%"><input id="firstName" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-
-
-															<tr>
-																	<td width="15%" align="left"><font color="green">Last Name</font></td>
-																	<td width="85%"><input id="lastName" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-																
-
-															<tr>
-																	<td width="15%" align="left"><font color="green">Address Line1</font></td>
-																	<td width="85%"><input id="addressLine1" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-						
-															<tr>
-																	<td width="15%" align="left"><font color="green">Address Line2</font></td>
-																	<td width="85%"><input id="addressLine2" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-
-															<tr>
-																	<td width="15%" align="left"><font color="green">City</font></td>
-																	<td width="85%"><input id="city" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-
-															<tr>
-																	<td width="15%" align="left"><font color="green">State</font></td>
-																	<td width="85%"><input id="state" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-															
-															<tr>
-																	<td width="15%" align="left"><font color="green">Zip code</font></td>
-																	<td width="85%"><input id="zip" type="text" style="color:#aaa" class="form-control"></td>
-															</tr>	
-
-															</tbody></table>
-															</div>
-															
-														</div>
+								        	<form id="reservation" class="form-horizontal">
+										  		<div class="form-group">
+										  			<div class="col-md-2">
+									  					<label for="user-new-email">Email</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-email" class="form-control" style="width:100%;"/>
 													</div>
-												</form>
-											</div>
+													<div class="col-md-2">
+									  					<label for="user-new-confirm-email">Confirm Email</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-confirm-email" class="form-control" style="width:100%;"/>
+													</div>
+										  		</div>
+										  		<div class="form-group">
+										  			<div class="col-md-2">
+									  					<label for="user-new-password">Password</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-password" class="form-control" style="width:100%;"/>
+													</div>
+													<div class="col-md-2">
+									  					<label for="user-new-confirm-password">Confirm Password</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-confirm-password" class="form-control" style="width:100%;"/>
+													</div>
+										  		</div>
+										  		<div class="form-group">
+										  			<div class="col-md-2">
+									  					<label for="user-new-first-name">First Name</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-first-name" class="form-control" style="width:100%;"/>
+													</div>
+													<div class="col-md-2">
+									  					<label for="user-new-last-name">Last Name</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-last-name" class="form-control" style="width:100%;"/>
+													</div>
+										  		</div>
+										  		<div class="form-group">
+										  			<div class="col-md-2">
+									  					<label for="user-new-address-line-one">Address Line 1</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-address-line-one" class="form-control"  style="width:100%;"/>
+													</div>
+													<div class="col-md-2">
+									  					<label for="user-new-address-line-two">Address Line 2</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-address-line-two" class="form-control"  style="width:100%;"/>
+													</div>
+										  		</div>
+										  		<div class="form-group">
+										  			<div class="col-md-2">
+									  					<label for="user-new-city">City</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-city" class="form-control"  style="width:100%;"/>
+													</div>
+													<div class="col-md-2">
+									  					<label for="user-new-state">State</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-state" class="form-control"  style="width:100%;"/>
+													</div>
+										  		</div>
+										  		<div class="form-group">
+										  			<div class="col-md-2">
+									  					<label for="user-new-zip">Zip</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-zip" class="form-control"  style="width:100%;"/>
+													</div>
+													<div class="col-md-2">
+									  					<label for="user-new-notes">Notes</label>
+										  			</div>
+													<div class="col-md-4">
+														<input type="text" id="user-new-notes" class="form-control"  style="width:100%;"/>
+													</div>
+										  		</div>
+									  		</form>
 								      	</div>
 								      	<div class="modal-footer">
 								      		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

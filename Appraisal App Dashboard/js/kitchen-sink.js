@@ -414,37 +414,41 @@ function validateNewUser(){
 
 	var validated = true;
 
-	if(!validateEmail($('#email').val())){
+	if(!validateEmail($('#new-user-email').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-email').css('border', '1px solid tomato');
 	}
-	if(!validatePassword($('#password').val())){
+	if(!validatePassword($('#new-user-password').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-password').css('border', '1px solid tomato');
 	}
-	if(!validateTextFilled($('#firstName').val())){
+	if(!validateTextFilled($('#new-user-first-name').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-first-name').css('border', '1px solid tomato');
 	}
-	if(!validateTextFilled($('#lastName').val())){
+	if(!validateTextFilled($('#new-user-last-name').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-last-name').css('border', '1px solid tomato');
 	}
-	if(!validateTextFilled($('#addressLine1').val())){
+	if(!validateTextFilled($('#new-user-address-line-one').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-address-line-one').css('border', '1px solid tomato');
 	}
-	if(!validateTextFilled($('#city').val())){
+	/*if(!validateTextFilled($('#new-user-address-line-two').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		$('#new-user-address-line-two').css('border', '1px solid tomato');
+	}*/
+	if(!validateTextFilled($('#new-user-city').val())){
+		validated = false;
+		//$('#new-user-city').css('border', '1px solid tomato');
 	}
-	if(!validateTextFilled($('#state').val())){
+	if(!validateTextFilled($('#new-user-state').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-state').css('border', '1px solid tomato');
 	}
-	if(!validateZipCode($('#zip').val())){
+	if(!validateZipCode($('#new-user-zip').val())){
 		validated = false;
-		$('#userName').css('border', '1px solid tomato');
+		//$('#new-user-zip').css('border', '1px solid tomato');
 	}
 
 	if(validated)
@@ -562,9 +566,10 @@ function randomDate(start, end) {
 
 //Creation functions
 function createUser(){
+	//TODO
 	if(validateNewUser()){
-		users.push(new User(users[users.length-1].id + 1, $('#firstName').val(), $('#lastName').val(), [], $('#email').val(), '985-895-5663', 
-			$('#addressLine1').val(), $('#addressLine2').val(), $('#city').val(), $('#state').val(), $('#zip').val()));
+		users.push(new User(users[users.length-1].id + 1, $('#user-new-first-name').val(), $('#user-new-last-name').val(), [], $('#user-new-email').val(), $('#user-new-phone-number').val(), 
+			$('#user-new-address-line-one').val(), $('#user-new-address-line-two').val(), $('#user-new-city').val(), $('#user-new-state').val(), $('#user-new-zip').val()));
 		loadTableData('users-table', users, 2, userTableColumns, userTableColumnDefs);
 		$('#create-user-modal').modal('hide');
 		return true;

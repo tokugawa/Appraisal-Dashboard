@@ -2733,12 +2733,30 @@
 			str.replace('_INPUT_', input) :
 			str+input;
 	
+		/*Original filter included in DataTables
 		var filter = $('<div/>', {
 				'id': ! features.f ? tableId+'_filter' : null,
 				'class': classes.sFilter
 			} )
-			.append( $('<label/>' ).append( str ) );
-	
+			.append( $('<label/>' ).append( str ) );*/
+
+		//Change the filter to bootstrap collapsable filter
+		var filter = $('<div/>', {
+			'id': ! features.f ? tableId+'_filter' : null,
+			'class': classes.sFilter
+		} )
+		.append(''+
+			'<form class="search-form" action="extra_search.html" method="GET">'+
+				'<div class="input-group">'+
+					'<input type="text" class="form-control input-sm" placeholder="Search..." name="query">'+
+					'<span class="input-group-btn">'+
+						'<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>'+
+					'</span>'+
+				'</div>'+
+			'</form>'+
+		'');
+		/////////////////////////////////////////////////////////////////////////////////////////////
+			
 		var searchFn = function() {
 			/* Update all other filter input elements for the new display */
 			var n = features.f;
